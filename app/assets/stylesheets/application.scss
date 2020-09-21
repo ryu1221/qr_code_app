@@ -1,0 +1,123 @@
+// Place all the styles related to the index controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import 'parts';
+@import 'mixin';
+
+
+body{
+  margin: 0;
+}
+
+// header部分
+.l-header{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background: $white;
+  position: fixed;
+  z-index: 10;
+}
+
+.l-header-right{
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.l-header-right__text{
+  margin: 0;
+  @include header-line-height;
+}
+
+.link{
+  color: $gray;
+  text-decoration: none;
+}
+
+.l-header-left{
+  transform: translateX(190px);
+  transition: .7s;
+}
+
+.l-header-left__lists{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.l-header-left__list{
+  background: rgba($color: $white, $alpha: 0.9);
+  padding: 0 30px;
+  @include header-line-height;
+  transition: .7s;
+
+  &:hover{
+    background: rgba($color: $white, $alpha: 1);
+  }
+}
+
+// headerのfontawesome部分
+.qr-logo{
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.menu{
+  cursor: pointer;
+  color: $gray;
+  font-size: 20px;
+  transition: .7s;
+  transform: translateX(-100px);
+}
+
+.change{
+  margin-right: 10px;
+}
+
+.camera{
+  margin-right: 10px;
+}
+
+// headerのactive部分
+.l-header.active .l-header-left{
+  transform: translateX(-0px);
+}
+.l-header.active .menu{
+  transform: translateX(-0px);
+}
+
+
+
+// 動画部分
+.main-mv{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.mv{
+  position: absolute;
+  right:0;
+  bottom:0;
+  min-width:100%;
+  min-height:100vh;
+  width:auto;
+  height:auto;
+  z-index:-1;
+}
+
+.mv-heading{
+  display: flex;
+  justify-content: center;
+}
+
+.mv-text{
+  margin: 0;
+  color: $white;
+  font-size: 100px;
+}
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QrCodeApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/76b7c2052c.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+
+    <header class="l-header">
+
+    <div class="l-header-right">
+      <%= link_to '/top', class: "link" do %>
+        <p class="l-header-right__text"><i class="fas fa-qrcode qr-logo"></i>QRcode</p>
+      <% end %>
+    </div>
+
+    <div class="l-header-left">
+      <nav class="l-header-left__nav">
+        <ul class="l-header-left__lists">
+          <li class="l-header-left__list"><i class="fas fa-bars menu"></i></li>
+          <%= link_to '/top', class: "link" do %>
+            <li class="l-header-left__list"><i class="fas fa-exchange-alt change"></i>QRに変換する</li>
+          <% end %>
+          <%= link_to '/top', class: "link" do %>
+            <li class="l-header-left__list"><i class="fas fa-camera camera"></i>QRを読み取る</li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+
+  </header>
+
+  <section class="main-mv">
+  <%= video_tag('/assets/videos/mv.mp4', autoplay: true, loop: true, muted: true, class: 'mv' )  %>
+  <h1 class="mv-text">QRは便利だね</h1>
+  </section>
+
+    <%= yield %>
+  </body>
+</html>
