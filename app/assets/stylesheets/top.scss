@@ -3,3 +3,71 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import 'parts';
 @import 'mixin';
+
+//「Q」部分
+.top-texts{
+  width: 100%;
+  height: 80px;
+  background: $bg-gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-texts__text{
+  margin: 0;
+  color: $yellow;
+  // @include gold;
+}
+
+.big-text{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+// main部分
+.top-main{
+  width: 100%;
+  height: 200px;
+  background: $yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.top-main__heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.top-main__heading__text{
+  margin: 0;
+  color: $white;
+}
+
+
+// mainのタブ部分
+.top-main__lists{
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background: $white;
+  border-radius: 60px 60px 0 0;
+  border-bottom: 1px solid $gray;
+}
+
+.top-main__list{
+  color: $gray;
+  @include line-height(60px);
+}
+
+.point{
+  border-bottom: 2px solid $yellow;
+}

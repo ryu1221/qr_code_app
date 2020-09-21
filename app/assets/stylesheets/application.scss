@@ -4,6 +4,7 @@
 
 @import 'parts';
 @import 'mixin';
+@import 'top';
 
 
 body{
@@ -16,9 +17,10 @@ body{
   height: 80px;
   display: flex;
   justify-content: space-between;
-  background: $white;
+  // background: $white;
   position: fixed;
   z-index: 10;
+  // background: rgba($color: $white, $alpha: 0.5);
 }
 
 .l-header-right{
@@ -28,11 +30,11 @@ body{
 
 .l-header-right__text{
   margin: 0;
-  @include header-line-height;
+  @include line-height;
 }
 
 .link{
-  color: $gray;
+  color: $white;
   text-decoration: none;
 }
 
@@ -47,13 +49,13 @@ body{
   padding: 0;
 }
 .l-header-left__list{
-  background: rgba($color: $white, $alpha: 0.9);
+  background: rgba($color: $white, $alpha: 0.5);
   padding: 0 30px;
-  @include header-line-height;
+  @include line-height;
   transition: .7s;
 
   &:hover{
-    background: rgba($color: $white, $alpha: 1);
+    background: rgba($color: $white, $alpha: 0.7);
   }
 }
 
@@ -61,11 +63,12 @@ body{
 .qr-logo{
   margin-right: 5px;
   cursor: pointer;
+  @include gold;
 }
 
 .menu{
   cursor: pointer;
-  color: $gray;
+  color: $white;
   font-size: 20px;
   transition: .7s;
   transform: translateX(-100px);

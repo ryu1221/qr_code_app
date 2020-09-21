@@ -1,3 +1,13 @@
-@mixin header-line-height{
-  line-height: 80px;
+@mixin line-height($height: 80px){
+  line-height: $height;
+}
+
+@mixin gold{
+  color: transparent;
+	background: linear-gradient(0deg, #B67B03 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #B67B03 90% 100%); 
+	-webkit-background-clip: text;
+}
+
+@mixin bg-gold{
+	background: repeating-linear-gradient(0deg, #B67B03 0.1em, #DAAF08 0.2em, #FEE9A0 0.3em, #DAAF08 0.4em, #B67B03 0.5em); 
 }
