@@ -1,0 +1,34 @@
+<div class="qr-bg">
+  <section class="qr">
+    <div class="qr-left">
+      <div class="qr-contents">
+        <div class="qr-content">
+          <%= @qr_code %>
+        </div>
+      </div>
+
+      
+
+      <div class="qr-downroad">
+        <%= link_to '/top', class: "link" do %>
+          <p class="qr-downroad__btn">ダウンロード</p>
+        <% end %>
+      </div>
+      
+      <div class="qr-others">
+        <%= link_to '/top', class: "link" do %>
+          <p class="qr-others__btn">別のQRを作成する</p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="qr-right">
+      <div class="qr-info">
+        <p class="qr-info__heading">QRコード情報</p>
+        <div class="qr-info__content"><%= @qr_id.url %></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<%=%>

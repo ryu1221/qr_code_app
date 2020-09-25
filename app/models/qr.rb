@@ -1,0 +1,2 @@
+class Qr < ApplicationRecord
+end
