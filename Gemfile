@@ -53,6 +53,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+
+# QRコード生成
 gem 'rqrcode'
 gem 'rqrcode_png'
 gem 'chunky_png'
+
+# validates日本語化
+gem 'rails-i18n'

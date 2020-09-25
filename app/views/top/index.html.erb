@@ -23,6 +23,12 @@
     </nav>
   </section>
 
+
+    <% @qr_url.errors.full_messages.each do |message| %>
+      <p class="error"><%= message %></p>
+    <% end %>
+
+
   <%= form_with model: @qrs ,class: "input-form", local: true do |f| %>
   <%= f.text_field :url %>
   <%= f.submit "作成", class: "submit" %>

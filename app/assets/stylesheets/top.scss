@@ -141,10 +141,6 @@
   margin: 10px 0 0;
 }
 
-// .qr-image{
-//   width: 300px;
-//   height: 300px;
-// }
 
 // qr-right部分
 .qr-info__heading{
@@ -157,4 +153,12 @@
   height: 300px;
   padding: 50px;
   background: $white;
+}
+
+// validationエラーメッセージ
+.error{
+  margin: 0;
+  position: relative;
+  bottom: -50px;
+  text-align: center;
 }

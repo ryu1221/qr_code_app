@@ -4,16 +4,11 @@ class TopController < ApplicationController
   require 'chunky_png'
 
   def index
+    @qr_url = Qr.new(url: params[:url])
   end
 
   def show
     @qr = Qr.find_by(id: params[:id])
-
-    # content = "#{@qr.url}"
-    # size    = 3      
-    # level   = :h            
-    # @qr_code = RQRCode::QRCode.new(content, size: size, level: level).as_svg.html_safe
-
 
     content = "#{@qr.url}"
     size    = 10      
@@ -32,14 +27,20 @@ class TopController < ApplicationController
       resize_gte_to: false,
       size: 300
     )
+
     File.binwrite("./public/qr_images/qrcode.png", png.to_s)
     
   end
 
+
   def create
     @qr_url = Qr.new(url: params[:url])
+    
     if @qr_url.save
       redirect_to("/top/#{@qr_url.id}")
+    else
+      render('index')
     end
   end
+
 end
