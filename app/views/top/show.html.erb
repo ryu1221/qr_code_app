@@ -3,7 +3,7 @@
     <div class="qr-left">
       <div class="qr-contents">
         <div class="qr-content">
-          <%= @qr_code %>
+          <img src="/qr_images/qrcode.png" class="qr-image" alt="">
         </div>
       </div>
 
@@ -25,7 +25,7 @@
     <div class="qr-right">
       <div class="qr-info">
         <p class="qr-info__heading">QRコード情報</p>
-        <div class="qr-info__content"><%= @qr_id.url %></div>
+        <div class="qr-info__content"><%= @qr.url %></div>
       </div>
     </div>
   </section>
