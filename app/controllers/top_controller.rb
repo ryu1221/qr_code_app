@@ -37,8 +37,10 @@ class TopController < ApplicationController
     @qr_url = Qr.new(url: params[:url])
     
     if @qr_url.save
+      flash[:notice] = "QRコードが作成されました"
       redirect_to("/top/#{@qr_url.id}")
     else
+      flash[:notice] = "QRコードの作成に失敗しました"
       render('index')
     end
   end
