@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  web:
+    container_name: myapp_web_prod
+    build: .
+    environment:
+      RAILS_ENV: production
+    command: bundle exec puma -C config/puma.rb
+    volumes:
+      - .:/myapp
+      - ./public:/myapp/public
+      - ./tmp:/myapp/tmp
+      - ./log:/myapp/log
+    ports:
+      - 3000:3000
+
+  nginx:
+    container_name: myapp_nginx_prod
+    build: containers/nginx
+    volumes:
+      - ./public:/myapp/public
+      - ./tmp:/myapp/tmp
+    ports:
+      - 80:80
+    depends_
