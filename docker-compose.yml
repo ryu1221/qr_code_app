@@ -2,25 +2,25 @@ version: '3'
 
 services:
   web:
-    container_name: myapp_web_prod
+    container_name: qr_code_app_web_prod
     build: .
     environment:
       RAILS_ENV: production
     command: bundle exec puma -C config/puma.rb
     volumes:
-      - .:/myapp
+      - .:/qr_code_app
       - ./public:/qr_code_app/public
       - ./tmp:/qr_code_app/tmp
-      - ./log:/myapp/log
+      - ./log:/qr_code_app/log
     ports:
       - 3000:3000
 
   nginx:
-    container_name: myapp_nginx_prod
+    container_name: qr_code_app_nginx_prod
     build: containers/nginx
     volumes:
-      - ./public:/myapp/public
-      - ./tmp:/myapp/tmp
+      - ./public:/qr_code_app/public
+      - ./tmp:/qr_code_app/tmp
     ports:
       - 80:80
     depends_
