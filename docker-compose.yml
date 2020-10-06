@@ -9,8 +9,8 @@ services:
     command: bundle exec puma -C config/puma.rb
     volumes:
       - .:/myapp
-      - ./public:/myapp/public
-      - ./tmp:/myapp/tmp
+      - ./public:/qr_code_app/public
+      - ./tmp:/qr_code_app/tmp
       - ./log:/myapp/log
     ports:
       - 3000:3000
