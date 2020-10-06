@@ -5,7 +5,11 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
@@ -22,4 +26,13 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  host: <%= Rails.application.credentials.rds[:host] %>
+  database: <%= Rails.application.credentials.rds[:database] %>
+  username: <%= Rails.application.credentials.rds[:username] %>
+  password: <%= Rails.application.credentials.rds[:password] %>
+
+rds:
+  host: qrcodedb.chylzko8hygn.ap-northeast-1.rds.amazonaws.com
+  database: qrcodedb
+  username: qr_code_app
+  password: qr_code_app2020

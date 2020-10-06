@@ -1,0 +1,31 @@
+<section class="top">
+
+  <section class="top-main">
+    <div class="top-main__heading">
+      <h2 class="top-main__heading__text">様々なQRコードの作成ができます（無料）</h2>
+    </div>
+    <nav class="top-main__nav">
+      <ul class="top-main__lists">
+        <%= link_to '/top', class: "link" do %>
+          <li class="top-main__list">URL</li>
+        <% end %>
+        <%= link_to '/top/file', class: "link" do %>
+          <li class="top-main__list point">ファイル</li>
+        <% end %>
+        <%= link_to '/top', class: "link" do %>
+          <li class="top-main__list">Wi-Fi</li>
+        <% end %>
+      </ul>
+    </nav>
+  </section>
+
+
+    
+
+
+  <%= form_with model: @qrs ,class: "input-form", local: true,  multiple: true do |f| %>
+  <%= f.file_field :url, multiple: true %>
+  <%= f.submit "作成", class: "submit" %>
+  <% end %>
+
+</section>
